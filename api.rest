@@ -1,0 +1,24 @@
+###
+GET http://localhost:3000/books
+###
+POST  http://localhost:3000/books
+Accept: application/json
+Content-Type: application/json
+
+{
+    "title": "titlealdkjalekdj",
+    "author": "uathoraskd",
+    "category": "catgoeryalsdk"
+}
+###
+PUT  http://localhost:3000/books/e8b2f466-330c-4832-b00e-00e2beef8afe
+Accept: application/json
+Content-Type: application/json
+
+{
+    "title": "title edited",
+    "author": "author edited",
+    "category": "catgoery edited"
+}
+###
+DELETE  http://localhost:3000/books/e8b2f466-330c-4832-b00e-00e2beef8afe
