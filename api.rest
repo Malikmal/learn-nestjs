@@ -11,7 +11,7 @@ Content-Type: application/json
     "category": "catgoeryalsdk"
 }
 ###
-PUT  http://localhost:3000/books/e8b2f466-330c-4832-b00e-00e2beef8afe
+PUT  http://localhost:3000/books/4fde0491-a881-4944-9636-d15906f9923f
 Accept: application/json
 Content-Type: application/json
 
