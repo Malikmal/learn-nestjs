@@ -1,4 +1,5 @@
 import { Body, Controller, Get, Param, Patch, Post } from '@nestjs/common';
+import { ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { UserCreateDto } from './dto/user.create.dto';
 import { UserUpdateDto } from './dto/user.update.dto';
 import { User } from './schema/user.schema';
@@ -13,6 +14,11 @@ export class UserController {
     return this.userService.getUserById(userId);
   }
 
+  @ApiOperation({ summary: 'Get all User' })
+  @ApiResponse({
+    status: 200,
+    description: 'this is description api response swagger enpoint of get user',
+  })
   @Get()
   async getUsers(): Promise<User[]> {
     return this.userService.getUsers();
