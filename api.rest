@@ -22,3 +22,24 @@ Content-Type: application/json
 }
 ###
 DELETE  http://localhost:3000/books/e8b2f466-330c-4832-b00e-00e2beef8afe
+
+### 
+GET http://localhost:3000/users
+
+###
+GET http://localhost:3000/users/e0f29a08-f574-495b-a444-72dc5329af51
+###
+POST  http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "email": "malikmal98@gmail.com",
+    "age": 29
+}
+###
+PATCH  http://localhost:3000/users/e0f29a08-f574-495b-a444-72dc5329af51
+Content-Type: application/json
+
+{
+    "age": 21
+}

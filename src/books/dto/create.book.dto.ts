@@ -10,7 +10,6 @@ export class CreateBookDto {
   @IsNotEmpty()
   category: string;
 
-  
   @IsNotEmpty()
   @IsInt()
   year: number;
