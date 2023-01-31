@@ -7,50 +7,36 @@ import {
   Param,
   Body,
 } from '@nestjs/common';
+import { TodoService } from './todo.services';
 
 @Controller('todo')
 export class TodoController {
-  todos = [
-    {
-      id: 'dsa',
-      name: 'todo 1',
-    },
-    {
-      id: 'asd',
-      name: 'todo 2',
-    },
-  ];
+  constructor(private readonly todoService: TodoService) {
+    this.todoService = new TodoService();
+  }
 
   @Get()
-  index(): any {
-    return this.todos;
+  index(): Array<any> {
+    return this.todoService.getAll();
   }
 
   @Get(':id')
   show(@Param('id') id: string): any {
-    return this.todos.find((item) => item.id === id);
+    return this.todoService.getById(id);
   }
 
   @Post()
   store(@Body('name') name: string): any {
-    return this.todos.push({
-      id: (Math.random() + 1).toString(36).substring(7),
-      name: name,
-    });
+    return this.todoService.create(name);
   }
 
   @Put(':id')
   update(@Param('id') id: string, @Body('name') name: string): any {
-    const todo = this.todos.find((item) => item.id === id);
-    todo.name = name;
-
-    this.todos = [...this.todos.filter((item) => item.id !== id), todo];
-
-    return todo;
+    return this.todoService.update(id, name);
   }
 
   @Delete(':id')
   delete(@Param('id') id: string): any {
-    this.todos = [...this.todos.filter((item) => item.id !== id)];
+    return this.todoService.delete(id);
   }
 }
