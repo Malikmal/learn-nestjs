@@ -1,0 +1,22 @@
+###
+GET http://localhost:3000
+###
+GET http://localhost:3000/todo
+###
+GET http://localhost:3000/todo/asd
+###
+POST http://localhost:3000/todo
+Content-Type: application/json
+
+{
+    "name": "contoh"
+}
+###
+PUT http://localhost:3000/todo/asd
+Content-Type: application/json
+
+{
+    "name": "contoh edited"
+}
+###
+DELETE http://localhost:3000/todo/asd
