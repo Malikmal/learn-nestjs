@@ -12,11 +12,11 @@ Content-Type: application/json
     "name": "contoh"
 }
 ###
-PUT http://localhost:3000/todo/fha35h
+PUT http://localhost:3000/todo/hzam8
 Content-Type: application/json
 
 {
     "name": "contoh edited"
 }
 ###
-DELETE http://localhost:3000/todo/fha35h
+DELETE http://localhost:3000/todo/hzam8
